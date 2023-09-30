@@ -4,8 +4,6 @@ import com.example.springbootapirest.entities.Persona;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
-
 // Definir la interfaz 'PersonaService' que extiende 'BaseService' y añade métodos específicos de búsqueda.
 public interface PersonaService extends BaseService<Persona, Long> {
     /*
@@ -15,7 +13,7 @@ public interface PersonaService extends BaseService<Persona, Long> {
      */
 
     // Métodos específicos de búsqueda que no son heredados de 'BaseService'.
-    List<Persona> search(String filtro) throws Exception;
+    // List<Persona> search(String filtro) throws Exception;
     Page<Persona> search(String filtro, Pageable pageable) throws Exception;
 
     /*
