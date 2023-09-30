@@ -16,14 +16,17 @@ import org.springframework.web.bind.annotation.*;
 public class PersonaController extends BaseControllerImpl<Persona, PersonaServiceImpl> {
 
     // Definir un endpoint para buscar personas por un filtro.
-    @GetMapping("/search")
-    public ResponseEntity<?> search(@RequestParam String filtro) {
-        try {
-            return ResponseEntity.status(HttpStatus.OK).body(servicio.search(filtro));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"Error\": \"" + e.getMessage() + "\"}"));
+    /*
+        @GetMapping("/search")
+        public ResponseEntity<?> search(@RequestParam String filtro) {
+            try {
+                return ResponseEntity.status(HttpStatus.OK).body(servicio.search(filtro));
+            } catch (Exception e) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"Error\": \"" + e.getMessage() + "\"}"));
+            }
         }
-    }
+    */
+
 
     // Definir un endpoint para buscar personas por un filtro con paginación.
     @GetMapping("/searchPaged")
